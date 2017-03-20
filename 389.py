@@ -5,9 +5,4 @@ class Solution(object):
         :type t: str
         :rtype: str
         """
-        s = list(s)
-        for i in range(len(t)):
-            try:
-                s.pop(s.index(t[i]))
-            except ValueError:
-                return t[i]
+        return chr(reduce(operator.xor, map(ord, s + t)))
